@@ -39,7 +39,9 @@ namespace Pacagroup.Ecommerce.Application.Main
             }
             catch (Exception e)
             {
-                response.Message = e.Message;
+               // _logger.LogError(e.Message);
+                throw new Exception(e.Message);
+               // response.Message = e.Message;
             }
             return response;
         }

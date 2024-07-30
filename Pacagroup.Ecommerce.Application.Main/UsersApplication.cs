@@ -1,10 +1,9 @@
 ﻿using AutoMapper;
 using Pacagroup.Ecommerce.Application.DTO;
 using Pacagroup.Ecommerce.Application.Interface;
+using Pacagroup.Ecommerce.Application.Validator;
 using Pacagroup.Ecommerce.Domain.Interface;
 using Pacagroup.Ecommerce.Transversal.Common;
-using Pacagroup.Ecommerce.Application.Validator;
-using System;
 
 namespace Pacagroup.Ecommerce.Application.Main
 {
