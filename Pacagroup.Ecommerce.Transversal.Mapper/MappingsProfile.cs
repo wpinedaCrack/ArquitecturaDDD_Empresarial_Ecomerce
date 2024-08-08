@@ -1,7 +1,6 @@
-﻿using System;
-using AutoMapper;
-using Pacagroup.Ecommerce.Domain.Entity;
+﻿using AutoMapper;
 using Pacagroup.Ecommerce.Application.DTO;
+using Pacagroup.Ecommerce.Domain.Entity;
 
 namespace Pacagroup.Ecommerce.Transversal.Mapper
 {
@@ -11,6 +10,7 @@ namespace Pacagroup.Ecommerce.Transversal.Mapper
         {
             CreateMap<Customers, CustomersDto>().ReverseMap();
             CreateMap<Users, UsersDto>().ReverseMap();
+            CreateMap<Categories, CategoriesDto>().ReverseMap();
 
             //CreateMap<Customers, CustomersDto>().ReverseMap()
             //    .ForMember(destination => destination.CustomerId, source => source.MapFrom(src => src.CustomerId))
