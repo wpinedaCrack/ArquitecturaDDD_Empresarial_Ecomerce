@@ -141,3 +141,19 @@ BEGIN
     FETCH NEXT @PageSize ROWS ONLY
 END
 GO
+
+
+CREATE TABLE Categories (
+    CategoryID INT PRIMARY KEY,
+    CategoryName NVARCHAR(255) NOT NULL,
+    Description NVARCHAR(MAX),
+    Picture VARBINARY(MAX)
+);
+
+INSERT INTO Categories (CategoryID, CategoryName, Description, Picture)
+VALUES 
+(1, 'Category 1', 'Description for category 1', CAST(NEWID() AS VARBINARY(16))),
+(2, 'Category 2', 'Description for category 2', CAST(NEWID() AS VARBINARY(16))),
+(3, 'Category 3', 'Description for category 3', CAST(NEWID() AS VARBINARY(16))),
+(4, 'Category 4', 'Description for category 4', CAST(NEWID() AS VARBINARY(16))),
+(5, 'Category 5', 'Description for category 5', CAST(NEWID() AS VARBINARY(16)));
