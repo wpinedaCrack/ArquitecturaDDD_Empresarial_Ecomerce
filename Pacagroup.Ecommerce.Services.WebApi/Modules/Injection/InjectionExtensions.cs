@@ -18,6 +18,11 @@ namespace Pacagroup.Ecommerce.Services.WebApi.Modules.Injection
         {
             services.AddSingleton<IConfiguration>(configuration);
             services.AddSingleton<DapperContext>();
+
+            services.AddScoped<ICategoriesApplication, CategoriesApplication>();
+            services.AddScoped<ICategoriesDomain,CategoriesDomain>();
+            services.AddScoped<ICategoriesRepository, CategoriesRepository>();
+
             services.AddScoped<ICustomersApplication, CustomersApplication>();
             services.AddScoped<ICustomersDomain, CustomersDomain>();
             services.AddScoped<ICustomersRepository, CustomersRepository>();

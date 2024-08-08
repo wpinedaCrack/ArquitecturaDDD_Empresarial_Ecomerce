@@ -1,3 +1,74 @@
+
+ 
+ CREATE TABLE [dbo].[Users](
+	[UserId] [int] NOT NULL,
+	[FirstName] [varchar](50) NOT NULL,
+	[LastName] [varchar](50) NOT NULL,
+	[UserName] [varchar](50) NOT NULL,
+	[Password] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_Users] PRIMARY KEY NONCLUSTERED 
+(
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ 
+ 
+CREATE TABLE [dbo].[Categories](
+	[CategoryID] [int] NOT NULL,
+	[CategoryName] [nvarchar](255) NOT NULL,
+	[Description] [nvarchar](max) NULL,
+	[Picture] [varbinary](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[CategoryID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
+INSERT INTO Categories (CategoryID, CategoryName, Description, Picture)
+VALUES 
+(1, 'Category 1', 'Description for category 1', CAST(NEWID() AS VARBINARY(16))),
+(2, 'Category 2', 'Description for category 2', CAST(NEWID() AS VARBINARY(16))),
+(3, 'Category 3', 'Description for category 3', CAST(NEWID() AS VARBINARY(16))),
+(4, 'Category 4', 'Description for category 4', CAST(NEWID() AS VARBINARY(16))),
+(5, 'Category 5', 'Description for category 5', CAST(NEWID() AS VARBINARY(16)));
+
+
+GO
+
+
+
+
+
+
+CREATE TABLE [dbo].[Customers](
+	[CustomerId] [nvarchar](50) NOT NULL,
+	[CompanyName] [nvarchar](100) NOT NULL,
+	[ContactName] [nvarchar](100) NULL,
+	[ContactTitle] [nvarchar](50) NULL,
+	[Address] [nvarchar](255) NULL,
+	[City] [nvarchar](50) NULL,
+	[Region] [nvarchar](50) NULL,
+	[PostalCode] [nvarchar](20) NULL,
+	[Country] [nvarchar](50) NULL,
+	[Phone] [nvarchar](50) NULL,
+	[Fax] [nvarchar](50) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[CustomerId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
+
+
+
+
+
 CREATE PROCEDURE CustomersInsert
 (
 	@CustomerID nchar (5) ,
@@ -142,18 +213,4 @@ BEGIN
 END
 GO
 
-
-CREATE TABLE Categories (
-    CategoryID INT PRIMARY KEY,
-    CategoryName NVARCHAR(255) NOT NULL,
-    Description NVARCHAR(MAX),
-    Picture VARBINARY(MAX)
-);
-
-INSERT INTO Categories (CategoryID, CategoryName, Description, Picture)
-VALUES 
-(1, 'Category 1', 'Description for category 1', CAST(NEWID() AS VARBINARY(16))),
-(2, 'Category 2', 'Description for category 2', CAST(NEWID() AS VARBINARY(16))),
-(3, 'Category 3', 'Description for category 3', CAST(NEWID() AS VARBINARY(16))),
-(4, 'Category 4', 'Description for category 4', CAST(NEWID() AS VARBINARY(16))),
-(5, 'Category 5', 'Description for category 5', CAST(NEWID() AS VARBINARY(16)));
+ 

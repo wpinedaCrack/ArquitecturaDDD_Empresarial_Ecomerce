@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Caching.Distributed;
 using Pacagroup.Ecommerce.Application.DTO;
 using Pacagroup.Ecommerce.Application.Interface;
+using Pacagroup.Ecommerce.Domain.Entity;
 using Pacagroup.Ecommerce.Domain.Interface;
 using Pacagroup.Ecommerce.Transversal.Common;
 using System.Text;
@@ -26,6 +27,20 @@ namespace Pacagroup.Ecommerce.Application.Main
         {
             var response = new Response<IEnumerable<CategoriesDto>>();
             var cacheKey = "categoriesList";
+            //try
+            //{
+            //    var categories = await _categoriesDomain.GetAll();
+            //    response.Data = _mapper.Map<IEnumerable<CategoriesDto>>(categories);
+            //    if (response.Data != null)
+            //    {
+            //        response.IsSuccess = true;
+            //        response.Message = "Consulta Exitosa!!!";
+            //    }
+            //}
+            //catch (Exception e)
+            //{
+            //    response.Message = e.Message;
+            //}
 
             try
             {
