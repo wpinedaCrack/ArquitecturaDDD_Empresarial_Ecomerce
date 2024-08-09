@@ -72,8 +72,12 @@ if (app.Environment.IsDevelopment())
 app.UseWatchDogExceptionLogger();
 app.UseHttpsRedirection();
 app.UseCors("policyApiEcommerce");
+
+app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseEndpoints(endpoints => { });
+
 app.MapControllers();
 app.MapHealthChecksUI();
 app.MapHealthChecks("/health", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions

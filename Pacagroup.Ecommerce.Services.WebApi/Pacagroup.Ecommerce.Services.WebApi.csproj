@@ -18,6 +18,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Startup.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.Redis" Version="7.0.1" />
     <PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="6.0.2" />
     <PackageReference Include="AspNetCore.HealthChecks.UI" Version="6.0.4" />
     <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="6.0.4" />
