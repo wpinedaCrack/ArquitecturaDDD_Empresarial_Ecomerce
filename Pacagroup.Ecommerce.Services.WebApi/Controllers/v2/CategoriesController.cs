@@ -1,18 +1,17 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using Pacagroup.Ecommerce.Application.Interface;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-//using Microsoft.AspNetCore.RateLimiting;
 
 namespace Pacagroup.Ecommerce.Services.WebApi.Controllers.v2
 {
-    //[EnableRateLimiting("fixedWindow")]
     [Authorize]
-    [Route("api/v{version:apiVersion}/[controller]")]
+    [EnableRateLimiting("fixedWindow")]
     [ApiController]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiVersion("2.0")]
-    public class CategoriesController : Controller//ControllerBase
+    public class CategoriesController : ControllerBase
     {
         private readonly ICategoriesApplication _categoriesApplication;
         public CategoriesController(ICategoriesApplication categoriesApplication)

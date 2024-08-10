@@ -28,6 +28,7 @@ using Pacagroup.Ecommerce.Services.WebApi.Modules.Feature;
 using Pacagroup.Ecommerce.Services.WebApi.Modules.HealthCheck;
 using Pacagroup.Ecommerce.Services.WebApi.Modules.Injection;
 using Pacagroup.Ecommerce.Services.WebApi.Modules.Mapper;
+using Pacagroup.Ecommerce.Services.WebApi.Modules.RateLimiter;
 using Pacagroup.Ecommerce.Services.WebApi.Modules.Redis;
 using Pacagroup.Ecommerce.Services.WebApi.Modules.Swagger;
 using Pacagroup.Ecommerce.Services.WebApi.Modules.Validator;
@@ -50,6 +51,7 @@ builder.Services.AddValidator();
 builder.Services.AddHealthCheck(builder.Configuration);
 builder.Services.AddWatchDog(builder.Configuration);
 builder.Services.AddRedisCache(builder.Configuration);
+builder.Services.AddRatelimiting(builder.Configuration);
 
 var app = builder.Build();
 
@@ -76,7 +78,9 @@ app.UseCors("policyApiEcommerce");
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseRateLimiter();
 app.UseEndpoints(endpoints => { });
+
 
 app.MapControllers();
 app.MapHealthChecksUI();
