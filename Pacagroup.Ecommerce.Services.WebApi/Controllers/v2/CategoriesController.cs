@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
 using Pacagroup.Ecommerce.Application.Interface;
 using System.Threading.Tasks;
+using Pacagroup.Ecommerce.Application.Interface.UseCases;
 
 namespace Pacagroup.Ecommerce.Services.WebApi.Controllers.v2
 {

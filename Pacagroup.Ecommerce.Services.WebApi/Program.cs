@@ -35,6 +35,9 @@ using Pacagroup.Ecommerce.Services.WebApi.Modules.Validator;
 using Pacagroup.Ecommerce.Services.WebApi.Modules.Versioning;
 using Pacagroup.Ecommerce.Services.WebApi.Modules.Watch;
 using WatchDog;
+using Pacagroup.Ecommerce.Persistence;
+using Pacagroup.Ecommerce.Application.UseCases;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -43,6 +46,9 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddMapper();
 builder.Services.AddFeature(builder.Configuration);
+builder.Services.AddPersistenceServices();//Inyeccion desde Persistence
+builder.Services.AddApplicationServices();//Inyeccion desde Apliacación
+
 builder.Services.AddInjection(builder.Configuration);
 builder.Services.AddAuthentication(builder.Configuration);
 builder.Services.AddVersioning();

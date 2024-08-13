@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
 using Pacagroup.Ecommerce.Application.DTO;
-using Pacagroup.Ecommerce.Application.Interface;
 using System.Threading.Tasks;
+using Pacagroup.Ecommerce.Application.Interface.UseCases;
 
 namespace Pacagroup.Ecommerce.Services.WebApi.Controllers.v2
 {
@@ -23,7 +23,7 @@ namespace Pacagroup.Ecommerce.Services.WebApi.Controllers.v2
         #region "Métodos Sincronos"
 
         [HttpPost("Insert")]
-        public IActionResult Insert([FromBody]CustomersDto customersDto)
+        public IActionResult Insert([FromBody]CustomerDto customersDto)
         {
             if (customersDto == null)
                 return BadRequest();
@@ -35,7 +35,7 @@ namespace Pacagroup.Ecommerce.Services.WebApi.Controllers.v2
         }
 
         [HttpPut("Update/{customerId}")]
-        public IActionResult Update(string customerId, [FromBody]CustomersDto customersDto)
+        public IActionResult Update(string customerId, [FromBody]CustomerDto customersDto)
         {
             var customerDto = _customersApplication.Get(customerId);
             if (customerDto.Data == null)
@@ -98,7 +98,7 @@ namespace Pacagroup.Ecommerce.Services.WebApi.Controllers.v2
         #region "Métodos Asincronos"
 
         [HttpPost("InsertAsync")]
-        public async Task<IActionResult> InsertAsync([FromBody]CustomersDto customersDto)
+        public async Task<IActionResult> InsertAsync([FromBody]CustomerDto customersDto)
         {
             if (customersDto == null)
                 return BadRequest();
@@ -110,7 +110,7 @@ namespace Pacagroup.Ecommerce.Services.WebApi.Controllers.v2
         }
 
         [HttpPut("UpdateAsync/{customerId}")]
-        public async Task<IActionResult> UpdateAsync(string customerId, [FromBody]CustomersDto customersDto)
+        public async Task<IActionResult> UpdateAsync(string customerId, [FromBody]CustomerDto customersDto)
         {
             var customerDto = await _customersApplication.GetAsync(customerId);
             if (customerDto.Data == null)

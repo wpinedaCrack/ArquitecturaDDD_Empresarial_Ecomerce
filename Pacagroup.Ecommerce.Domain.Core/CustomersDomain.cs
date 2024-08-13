@@ -1,7 +1,7 @@
 ﻿using System;
 using Pacagroup.Ecommerce.Domain.Entity;
 using Pacagroup.Ecommerce.Domain.Interface;
-using Pacagroup.Ecommerce.Infrastructure.Interface;
+using Pacagroup.Ecommerce.Application.Interface.Persistence;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
