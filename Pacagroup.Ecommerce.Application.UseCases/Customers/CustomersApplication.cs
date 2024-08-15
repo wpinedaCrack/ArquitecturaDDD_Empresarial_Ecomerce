@@ -3,7 +3,7 @@ using Pacagroup.Ecommerce.Application.DTO;
 using Pacagroup.Ecommerce.Application.Interface.Persistence;
 using Pacagroup.Ecommerce.Application.Interface.UseCases;
 using Pacagroup.Ecommerce.Transversal.Common;
-using Pacagroup.Ecommerce.Domain.Entity;
+using Pacagroup.Ecommerce.Domain.Entities;
 
 namespace Pacagroup.Ecommerce.Application.UseCases.Customers
 {

@@ -15,8 +15,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aplicacion", "Aplicacion", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Servicio", "Servicio", "{2D1B86CD-4F88-4AE5-9077-50966CCD2610}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pacagroup.Ecommerce.Domain.Entity", "Pacagroup.Ecommerce.Domain.Entity\Pacagroup.Ecommerce.Domain.Entity.csproj", "{3C5AB366-15EE-4DB5-B224-48AE26AB49B0}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pacagroup.Ecommerce.Application.DTO", "Pacagroup.Ecommerce.Application.DTO\Pacagroup.Ecommerce.Application.DTO.csproj", "{60AC262B-A243-47C8-A1A4-80C7E44E21FD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pacagroup.Ecommerce.Transversal.Mapper", "Pacagroup.Ecommerce.Transversal.Mapper\Pacagroup.Ecommerce.Transversal.Mapper.csproj", "{9FE61909-A3AC-4C3B-AF8D-AA0D6D4339F9}"
@@ -37,6 +35,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pacagroup.Ecommerce.Persist
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pacagroup.Ecommerce.Application.UseCases", "Pacagroup.Ecommerce.Application.UseCases\Pacagroup.Ecommerce.Application.UseCases.csproj", "{85736A39-B539-484A-BC84-F0CF1F3EF5F0}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pacagroup.Ecommerce.Domain", "Pacagroup.Ecommerce.Domain\Pacagroup.Ecommerce.Domain.csproj", "{460777ED-91EF-4C37-A1D3-D2C7466CE9CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,10 +47,6 @@ Global
 		{2EE5CDC4-3986-4AF4-B770-8AF7471BE2A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EE5CDC4-3986-4AF4-B770-8AF7471BE2A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EE5CDC4-3986-4AF4-B770-8AF7471BE2A7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3C5AB366-15EE-4DB5-B224-48AE26AB49B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C5AB366-15EE-4DB5-B224-48AE26AB49B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C5AB366-15EE-4DB5-B224-48AE26AB49B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3C5AB366-15EE-4DB5-B224-48AE26AB49B0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{60AC262B-A243-47C8-A1A4-80C7E44E21FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{60AC262B-A243-47C8-A1A4-80C7E44E21FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60AC262B-A243-47C8-A1A4-80C7E44E21FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -87,13 +83,16 @@ Global
 		{85736A39-B539-484A-BC84-F0CF1F3EF5F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85736A39-B539-484A-BC84-F0CF1F3EF5F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85736A39-B539-484A-BC84-F0CF1F3EF5F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{460777ED-91EF-4C37-A1D3-D2C7466CE9CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{460777ED-91EF-4C37-A1D3-D2C7466CE9CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{460777ED-91EF-4C37-A1D3-D2C7466CE9CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{460777ED-91EF-4C37-A1D3-D2C7466CE9CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2EE5CDC4-3986-4AF4-B770-8AF7471BE2A7} = {09B0BD76-BB4D-4C6B-90C6-4E392C290F5F}
-		{3C5AB366-15EE-4DB5-B224-48AE26AB49B0} = {8723CFD1-26B9-4B59-9B90-2003EECC85ED}
 		{60AC262B-A243-47C8-A1A4-80C7E44E21FD} = {5ECD759F-013E-415D-BA74-48AD75B5A1E7}
 		{9FE61909-A3AC-4C3B-AF8D-AA0D6D4339F9} = {09B0BD76-BB4D-4C6B-90C6-4E392C290F5F}
 		{0A70016A-9371-471E-A012-96268B9BE558} = {5ECD759F-013E-415D-BA74-48AD75B5A1E7}
@@ -103,6 +102,7 @@ Global
 		{1F67EE45-EB8F-4F33-977D-CB617D1CBC0E} = {A2859F04-3C0B-49EE-9F20-7FB23C30F98C}
 		{A7D7C6CB-7471-4D37-8B20-3C9C310D36E7} = {50B0B24F-0E2D-4BF1-B42F-D7A6178B7064}
 		{85736A39-B539-484A-BC84-F0CF1F3EF5F0} = {5ECD759F-013E-415D-BA74-48AD75B5A1E7}
+		{460777ED-91EF-4C37-A1D3-D2C7466CE9CD} = {8723CFD1-26B9-4B59-9B90-2003EECC85ED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A3A67882-EA02-4925-ABDD-A7C9157A1C7D}
