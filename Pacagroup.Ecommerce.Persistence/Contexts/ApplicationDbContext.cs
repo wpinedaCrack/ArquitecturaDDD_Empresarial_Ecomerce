@@ -8,7 +8,8 @@ namespace Pacagroup.Ecommerce.Persistence.Contexts
     public class ApplicationDbContext : DbContext
     {
         public readonly AuditableEntitySaveChangesInterceptor _auditableEntitySaveChangesInterceptor;
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, AuditableEntitySaveChangesInterceptor auditableEntitySaveChangesInterceptor) : base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, 
+                                    AuditableEntitySaveChangesInterceptor auditableEntitySaveChangesInterceptor) : base(options)
         {
             _auditableEntitySaveChangesInterceptor = auditableEntitySaveChangesInterceptor;
         }

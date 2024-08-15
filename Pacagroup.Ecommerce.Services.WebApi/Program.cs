@@ -46,7 +46,7 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddMapper();
 builder.Services.AddFeature(builder.Configuration);
-builder.Services.AddPersistenceServices();//Inyeccion desde Persistence
+builder.Services.AddPersistenceServices(builder.Configuration);//Inyeccion desde Persistence
 builder.Services.AddApplicationServices();//Inyeccion desde Apliacación
 
 builder.Services.AddInjection(builder.Configuration);
