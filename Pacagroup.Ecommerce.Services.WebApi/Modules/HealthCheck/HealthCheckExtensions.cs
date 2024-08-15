@@ -12,7 +12,7 @@ namespace Pacagroup.Ecommerce.Services.WebApi.Modules.HealthCheck
                .AddRedis(configuration.GetConnectionString("RedisConnection"), tags: new[] { "cache" })
                .AddCheck<HealthCheckCustom>("HealthCheckCustom", tags: new[] { "custom" });
 
-            services.AddHealthChecksUI().AddInMemoryStorage();
+            //services.AddHealthChecksUI().AddInMemoryStorage(); wpineda revisar
 
             return services;
         }

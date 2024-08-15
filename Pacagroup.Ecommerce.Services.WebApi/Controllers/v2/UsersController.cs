@@ -9,6 +9,7 @@ using Pacagroup.Ecommerce.Transversal.Common;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Pacagroup.Ecommerce.Services.WebApi.Controllers.v2
@@ -51,6 +52,7 @@ namespace Pacagroup.Ecommerce.Services.WebApi.Controllers.v2
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+            
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[]
@@ -58,7 +60,7 @@ namespace Pacagroup.Ecommerce.Services.WebApi.Controllers.v2
                     new Claim(ClaimTypes.Name, usersDto.Data.UserId.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddMinutes(30),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),//HmacSha256Signature
                 Issuer = _appSettings.Issuer,
                 Audience = _appSettings.Audience
             };
