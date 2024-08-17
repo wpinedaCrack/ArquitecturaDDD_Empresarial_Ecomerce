@@ -18,6 +18,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Modules\Mapper\**" />
+    <Compile Remove="Modules\Validator\**" />
+    <Content Remove="Modules\Mapper\**" />
+    <Content Remove="Modules\Validator\**" />
+    <EmbeddedResource Remove="Modules\Mapper\**" />
+    <EmbeddedResource Remove="Modules\Validator\**" />
+    <None Remove="Modules\Mapper\**" />
+    <None Remove="Modules\Validator\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Startup.cs" />
   </ItemGroup>
 
@@ -62,7 +73,6 @@
     <ProjectReference Include="..\Pacagroup.Ecommerce.Persistence\Pacagroup.Ecommerce.Persistence.csproj" />
     <ProjectReference Include="..\Pacagroup.Ecommerce.Transversal.Common\Pacagroup.Ecommerce.Transversal.Common.csproj" />
     <ProjectReference Include="..\Pacagroup.Ecommerce.Transversal.Logging\Pacagroup.Ecommerce.Transversal.Logging.csproj" />
-    <ProjectReference Include="..\Pacagroup.Ecommerce.Transversal.Mapper\Pacagroup.Ecommerce.Transversal.Mapper.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,23 +1,23 @@
-﻿//using Microsoft.AspNetCore.Hosting;
-//using Microsoft.Extensions.Hosting;
+﻿/*using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 
-//namespace Pacagroup.Ecommerce.Services.WebApi
-//{
-//    public class Program
-//    {
-//        public static void Main(string[] args)
-//        {
-//            CreateHostBuilder(args).Build().Run();
-//        }
+namespace Pacagroup.Ecommerce.Services.WebApi
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            CreateHostBuilder(args).Build().Run();
+        }
 
-//        public static IHostBuilder CreateHostBuilder(string[] args) =>
-//            Host.CreateDefaultBuilder(args)
-//                .ConfigureWebHostDefaults(webBuilder =>
-//                {
-//                    webBuilder.UseStartup<Startup>();
-//                });
-//    }
-//}
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
+    }
+}*/
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
@@ -27,11 +27,11 @@ using Pacagroup.Ecommerce.Services.WebApi.Modules.Authentication;
 using Pacagroup.Ecommerce.Services.WebApi.Modules.Feature;
 using Pacagroup.Ecommerce.Services.WebApi.Modules.HealthCheck;
 using Pacagroup.Ecommerce.Services.WebApi.Modules.Injection;
-using Pacagroup.Ecommerce.Services.WebApi.Modules.Mapper;
+//using Pacagroup.Ecommerce.Services.WebApi.Modules.Mapper;
 using Pacagroup.Ecommerce.Services.WebApi.Modules.RateLimiter;
 using Pacagroup.Ecommerce.Services.WebApi.Modules.Redis;
 using Pacagroup.Ecommerce.Services.WebApi.Modules.Swagger;
-using Pacagroup.Ecommerce.Services.WebApi.Modules.Validator;
+//using Pacagroup.Ecommerce.Services.WebApi.Modules.Validator;
 using Pacagroup.Ecommerce.Services.WebApi.Modules.Versioning;
 using Pacagroup.Ecommerce.Services.WebApi.Modules.Watch;
 using WatchDog;
@@ -44,7 +44,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddMapper();
+//builder.Services.AddMapper();
 builder.Services.AddFeature(builder.Configuration);
 builder.Services.AddPersistenceServices(builder.Configuration);//Inyeccion desde Persistence
 builder.Services.AddApplicationServices();//Inyeccion desde Apliacación
@@ -53,7 +53,7 @@ builder.Services.AddInjection(builder.Configuration);
 builder.Services.AddAuthentication(builder.Configuration);
 builder.Services.AddVersioning();
 builder.Services.AddSwagger();
-builder.Services.AddValidator();
+//builder.Services.AddValidator();
 builder.Services.AddHealthCheck(builder.Configuration);
 builder.Services.AddWatchDog(builder.Configuration);
 builder.Services.AddRedisCache(builder.Configuration);

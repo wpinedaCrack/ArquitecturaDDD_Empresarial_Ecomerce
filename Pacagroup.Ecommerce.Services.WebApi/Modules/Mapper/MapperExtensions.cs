@@ -1,5 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using AutoMapper;
+﻿using AutoMapper;
+using Microsoft.Extensions.DependencyInjection;
 using Pacagroup.Ecommerce.Transversal.Mapper;
 
 namespace Pacagroup.Ecommerce.Services.WebApi.Modules.Mapper
