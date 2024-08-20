@@ -41,7 +41,7 @@ using Pacagroup.Ecommerce.Application.UseCases;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+//builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 //builder.Services.AddMapper();
