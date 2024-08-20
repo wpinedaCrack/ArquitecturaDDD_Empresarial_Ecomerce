@@ -37,7 +37,7 @@ using Pacagroup.Ecommerce.Services.WebApi.Modules.Watch;
 using WatchDog;
 using Pacagroup.Ecommerce.Persistence;
 using Pacagroup.Ecommerce.Application.UseCases;
-
+using Pacagroup.Ecommerce.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,6 +47,7 @@ builder.Services.AddEndpointsApiExplorer();
 //builder.Services.AddMapper();
 builder.Services.AddFeature(builder.Configuration);
 builder.Services.AddPersistenceServices(builder.Configuration);//Inyeccion desde Persistence
+builder.Services.AddInfrastructureServices();//**
 builder.Services.AddApplicationServices();//Inyeccion desde Apliacación
 
 builder.Services.AddInjection(builder.Configuration);
